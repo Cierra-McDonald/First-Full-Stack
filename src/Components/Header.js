@@ -5,7 +5,7 @@ export default withRouter (class Header extends Component {
     render() {
         return (
             <div className="header">
-               Hello! I'm the Header! 
+               El Jardin Plants 
                {
                     this.props.location.pathname !== '/Home'
                         &&<NavLink exact activeClassName="selected" to="/Home" className="nav-link">

@@ -38,21 +38,34 @@
 }
 
 .header { 
-  background-color: blue;
+  background-color: #F5C396;
   width: 100%;
-  height: 150px; 
+  height: 100px; 
   text-align: center;
   color:cornsilk;
   font-size: 32px;
+  padding-top: 20px;
+}
+.welcome{ 
+  color:  #F5FDC6;
+  font-size: 200px;
+  text-align: center;
+  border: 4px solid #41521F ;
+  border-radius: 3em;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .nav-link { 
-  margin-left: 20px;
-  color: pink;
+  margin-left: 70%;
+  font-size: 16px;
+  color: #A89F68;
+  
 
 }
 
 .plant-item{ 
-  background-color: chartreuse;
+  background-color: #F5FDC6;
   border: 2px solid black;
   width: 200px;
   height: 250px;
@@ -65,8 +78,6 @@
 }
 
 .plant-list{ 
-  background-color: coral;
-  border: 2px solid black;
   display: flex;
   flex-wrap: wrap;
 }
