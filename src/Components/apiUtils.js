@@ -1,8 +1,8 @@
 import request from "superagent";
 
 
-const URL = 'http://localhost:3000';
-// const URL = 'https://murmuring-hollows-82372.herokuapp.com';
+// const URL = 'http://localhost:3000'; //for testing purposes
+const URL = 'https://murmuring-hollows-82372.herokuapp.com'; //for deployment and turn-in
 
 export async function getAllPlants() { 
 
