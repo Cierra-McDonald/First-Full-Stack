@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import PlantItem from './PlantItem'
 
 export default class PlantList extends Component {
@@ -17,6 +18,7 @@ export default class PlantList extends Component {
                         plantProp={singlePlant}
                         />)}
                     </ul>
+                   
                 }
             </div>
         )

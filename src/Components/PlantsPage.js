@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import request from 'superagent';
 import PlantList from './PlantList.js';
+import { getAllPlants } from './apiUtils.js';
 
 export default class PlantsPage extends Component {
 
@@ -15,21 +16,21 @@ export default class PlantsPage extends Component {
         this.setState({
             loading: true
         })
-        const data = await request.get(`https://murmuring-hollows-82372.herokuapp.com/plants`);
-        
-        await this.setState({
-            loading: false,
 
-            plantData: data.body
+        const data = await getAllPlants();
+        
+        this.setState({
+            loading: false,
+            plantData: data,
         })
-        console.log(data.body);
+    
     }
 
     filterPlants = async () => { 
         this.setState({ 
             loading: true
         })
-        const data = await request.get(`https://murmuring-hollows-82372.herokuapp.com/plants`);
+        const data = await getAllPlants();
 
         return data.body;
     }

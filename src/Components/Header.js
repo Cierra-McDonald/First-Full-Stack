@@ -18,6 +18,18 @@ export default withRouter (class Header extends Component {
                     Plants
                 </NavLink>
                 }
+                {
+                    this.props.location.pathname !== '/Details'
+                        && <NavLink exact activeClassName="selected" to="/Details" className="nav-link">
+                    Details
+                </NavLink>
+                }
+                {
+                    this.props.location.pathname !== '/Create'
+                        && <NavLink exact activeClassName="selected" to="/Create" className="nav-link">
+                    Create
+                </NavLink>
+                }
 
             </div>
         )
