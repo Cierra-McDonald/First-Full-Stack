@@ -57,7 +57,7 @@
   margin-right: 5%;
 }
 .nav-link { 
-  margin-left: 70%;
+  margin-left: 10px;
   font-size: 16px;
   color: #A89F68;
   
@@ -80,4 +80,12 @@
 .plant-list{ 
   display: flex;
   flex-wrap: wrap;
+}
+
+.create-form{ 
+  height: 500px;
+  width: 500px;
+  margin: 10px;
+  background-color: bisque;
+  padding: 20px;
 }

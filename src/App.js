@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
 import {
@@ -7,8 +6,10 @@ import {
   Switch,
 } from 'react-router-dom';
 import Header from './Components/Header';
-import PlantsPage from './Components/PlantsPage'
-import HomePage from './Components/HomePage'
+import PlantsPage from './Components/PlantsPage';
+import HomePage from './Components/HomePage';
+import DetailsPage from './Components/DetailsPage';
+import CreatePage from './Components/CreatePage'
 
 
 
@@ -28,6 +29,16 @@ export default class App extends Component {
                           path="/Plants" 
                           exact
                           render={(routerProps) => <PlantsPage {...routerProps} />} 
+                      />
+                        <Route 
+                          path="/Details/:id" 
+                          exact
+                          render={(routerProps) => <DetailsPage {...routerProps} />} 
+                      />
+                        <Route 
+                          path="/Create" 
+                          exact
+                          render={(routerProps) => <CreatePage {...routerProps} />} 
                       />
                      
                   </Switch>
