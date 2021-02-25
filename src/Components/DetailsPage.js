@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { deleteAPlant, getAllPlants, getOnePlant, updateAPlant, } from './apiUtils.js';
+import { deleteAPlant, getOnePlant, updateAPlant } from './apiUtils.js';
 
 
 
@@ -13,18 +13,21 @@ export default class DetailsPage extends Component {
         sizes_id: '',
         light: '',
         price: '',
+        sizes: ''
 
-        loading: true
+        // loading: true
 
     }
 
     componentDidMount = async () => { 
-        console.log('in component did mount')
-        const plant = await getOnePlant(this.props.match.params.id)
+        // console.log('in component did mount')
+        const plant = await getOnePlant(this.props.match.params.id);
         console.log(this.props.match.params.id, plant)
-
+        
         await this.setState({ 
             ...plant[0],
+            // getSizes_id, 
+            // sizes
         })
         console.log(this.state);
     }
@@ -70,7 +73,8 @@ export default class DetailsPage extends Component {
     handleDeleteSubmit = async (e) => { 
         e.preventDefault();
             
-            await deleteAPlant(this.state)
+            await deleteAPlant(this.props.match.params.id);
+            alert(`You have successfully deleted this item from inventory`)
             
             this.props.history.push('/Plants');
     }
@@ -78,7 +82,8 @@ export default class DetailsPage extends Component {
     handleUpdateChange = async (e) => { 
         e.preventDefault();
 
-        await updateAPlant()
+        await updateAPlant(this.props.match.params.id, this.state)
+
         this.props.history.push('/Plants')
     }
 
@@ -104,7 +109,7 @@ export default class DetailsPage extends Component {
                     </label><br/>
                     <label> 
                         Size:
-                        <select defaultValue={this.state.sizes_id}
+                        <select defaultValue={this.state.sizes}
                             onChange={this.handleSizeChange}>
                         <option value="1">Small </option>
                         <option value="2">Medium </option>

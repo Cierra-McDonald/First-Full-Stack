@@ -51,5 +51,3 @@ export async function updateAPlant(id, onePlant) {
 
     return response.body;
 }
-//this may need revision, I don't know what this does
-// export const getPlantSizesId = (plant, sizes) => sizes.find(size => plant.size === size.name).id;
