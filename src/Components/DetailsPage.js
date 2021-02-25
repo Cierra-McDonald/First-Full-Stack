@@ -15,8 +15,6 @@ export default class DetailsPage extends Component {
         price: '',
         sizes: ''
 
-        // loading: true
-
     }
 
     componentDidMount = async () => { 
@@ -42,7 +40,7 @@ export default class DetailsPage extends Component {
     handleSizeChange = (e) => { 
         console.log(e.target.value)
         this.setState({ 
-            sizes_id: e.target.value
+            sizes_id: Number(e.target.value)
         })
     }
 
@@ -88,10 +86,6 @@ export default class DetailsPage extends Component {
     }
 
 
-
-    // componentDidMount = async () => { 
-    //     await 
-    // }
     render() {
         return (
             <div>
@@ -109,11 +103,13 @@ export default class DetailsPage extends Component {
                     </label><br/>
                     <label> 
                         Size:
-                        <select defaultValue={this.state.sizes}
+                        <select defaultValue={this.state.sizes_id}
                             onChange={this.handleSizeChange}>
-                        <option value="1">Small </option>
-                        <option value="2">Medium </option>
-                        <option value="3">Large</option>
+                        
+                
+                        <option selected={this.state.sizes_id === 1} value="1" >Small </option>
+                        <option selected={this.state.sizes_id === 2} value="2">Medium </option>
+                        <option selected={this.state.sizes_id === 3} value="3">Large</option>
                         </select>
                     </label><br/>
                     <label> Light:
